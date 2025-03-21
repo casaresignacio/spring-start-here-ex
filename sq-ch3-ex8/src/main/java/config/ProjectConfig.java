@@ -2,6 +2,7 @@ package config;
 
 import beans.Parrot;
 import beans.Person;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -23,7 +24,8 @@ public class ProjectConfig {
     }
 
     @Bean
-    public Person person(Parrot parrot2) { //the name of the parameter matches with the name of the bean Parrot Miki
+    public Person person(
+            @Qualifier("parrot2") Parrot parrot2) { //the name of the parameter matches with the name of the bean Parrot Miki
         Person p = new Person();
         p.setName("Ella");
         p.setParrot(parrot2);
