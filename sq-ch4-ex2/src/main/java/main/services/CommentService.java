@@ -10,10 +10,10 @@ import org.springframework.stereotype.Component;
 public class CommentService {
 
     //defining two dependencies as attributes of the class
-    @Autowired
-    private  CommentRepository commentRepository;
-    @Autowired
-    private  CommentNotificationProxy commentNotificationProxy;
+
+    private final CommentRepository commentRepository;
+
+    private final CommentNotificationProxy commentNotificationProxy;
 
     //provide the dependencies when the object is built through the parameters of the constructor
     public CommentService(CommentRepository commentRepository, CommentNotificationProxy commentNotificationProxy) {
