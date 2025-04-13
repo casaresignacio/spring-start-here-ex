@@ -7,8 +7,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class CommentService {
 
-    @Autowired
-    private  CommentRepository commentRepository;
+    //Making the fielf final highlights that this field was intended not tobe changed
+    private final CommentRepository commentRepository;
+
+    public CommentService(CommentRepository commentRepository) {
+        this.commentRepository = commentRepository;
+    }
 
     public CommentRepository getCommentRepository() {
         return commentRepository;
