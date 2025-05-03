@@ -16,6 +16,7 @@ public class Comment {
         this.text = text;
     }
 
+
     public void setAuthor(String author) {
         this.author = author;
     }
