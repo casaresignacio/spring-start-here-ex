@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Main Page</title>
+</head>
+<body>
+<h1>Welcome</h1>
+<p th:text="'Hello, ' + ${username} + '!'"></p>
+
+<!-- Mostramos el link de logout solo si username existe -->
+<div th:if="${username}">
+    <a th:href="@{/main(logout=true)}">Logout</a>
+</div>
+
+</body>
+</html>
